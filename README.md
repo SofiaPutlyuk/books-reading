@@ -33,12 +33,19 @@ The application allows users to:
 🟦 Clean and minimal visual style
 
 ## ⚙️ Getting Started
-Install dependencies
+
+## Install dependencies
+```bash
 npm install
+```
 Run frontend
+```bash
 npm start
+```
 Run backend
+```bash
 npm run dev
+```
 
 ## 📌 Project Status
 🟡 In progress
