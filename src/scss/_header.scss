@@ -1,0 +1,13 @@
+.headerReading {
+    width: 320px;
+    height: 60px;
+    background-color: $white;
+    box-shadow: 0px 2px 3px 0px $boxShadowColor;
+    margin: auto;
+    display: flex;
+}
+.titleHeader{
+    @include title-text;
+    font-size: 20px;
+    margin: auto;
+}
