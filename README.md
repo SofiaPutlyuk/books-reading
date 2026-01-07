@@ -24,7 +24,7 @@ The application allows users to:
 
 | Layer     | Technologies                                  |
 |----------|-----------------------------------------------|
-| 🎨 Frontend | React, TypeScript, JavaScript, Redux Toolkit |
+| 🎨 Frontend | React, TypeScript, JavaScript, Redux Toolkit, SCSS |
 | ⚙️ Backend  | Node.js, Express, MongoDB, Mongoose          |
 
 ## 🎨 Design
