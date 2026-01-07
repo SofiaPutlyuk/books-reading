@@ -3,28 +3,77 @@
     font-size: 34px;
     text-align: center;
 }
-.containerInfo{
-    width:320px;
-    height:588px;
+
+.containerInfo {
+    width: 320px;
+    height: 588px;
     display: flex;
     background-color: $white;
     margin: 10px auto 0;
     flex-direction: column;
-    gap:20px;
+    gap: 30px;
     padding-top: 30px;
 }
+
 .containerOption {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap:10px;
+    gap: 10px;
 }
-.textOption{
+
+.textOption {
     @include text-second;
-    width:254px;
+    width: 254px;
 }
-.titleOption{
+
+.titleOption {
     @include text-second;
     font-size: 20px;
-    color:$colorTitle;
+    color: $colorTitle;
+}
+
+.btnOptionLog {
+    @include button-option;
+    @include text-second;
+    border: 1px solid $black;
+    color: $colorTitle;
+    background: none;
+}
+
+.btnOptionSign {
+    @include button-option;
+    @include text-second;
+    color:$white;
+    background-color:$orangeColor;
+    border:none;
+}
+.wrapperTextOption {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.wrapperButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:20px;
+    justify-content: center;
+}
+@media(min-width:768px){
+    .wrapperButton{
+        display: none;
+    }
+    .titleOption{
+        font-size: 20px;
+    }
+    .textOption{
+        width:400px;
+    }
+}
+@media(min-width:1440px){
+    .containerInfo{
+        width:715px;
+    }
 }

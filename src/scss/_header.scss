@@ -11,3 +11,19 @@
     font-size: 20px;
     margin: auto;
 }
+@media(min-width:768px){
+    .headerReading{
+        width:768px
+    }
+    .titleHeader{
+        margin:0;
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+    }
+}
+@media(min-width:1440px){
+    .headerReading{
+        width:1280px;
+    }
+}
