@@ -1,0 +1,128 @@
+.wrapperRegistration {
+    background-image: url("../assets/images/backgroundRegistration.png");
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 618px;
+    margin: auto;
+}
+
+.wrapperLayout {
+    width: 320px;
+    height: 618px;
+    background-color: $darkBlue;
+}
+
+.btnGoogle {
+    width: 150px;
+    height: 40px;
+    background-color: $secondWhite;
+    box-shadow: 0px 2px 2px 0px $boxShadowColor;
+    border: none;
+    color: $darkGrey;
+    font-size: 16px;
+    font-family: "Roboto";
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.formRegistration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    gap: 26px;
+}
+.formRegistration label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include text-second;
+    color:$white;
+    font-weight: 600;
+    gap:10px;
+}
+.inputRegistration {
+    width: 270px;
+    height: 42px;
+    background-color: $secondWhite;
+    border: 1px solid transparent;
+    outline: none;
+    box-shadow: 0px 1px 2px 0px $boxShadowColorTwo inset;
+    padding-left: 20px;
+
+    &::placeholder {
+        color: $greyLight;
+    }
+    &:focus{
+        border-color: $orangeColor;
+    }
+}
+.labelText{
+    display: inline-flex;
+}
+.btnSignUp {
+    background-color: $orangeColor;
+    width:270px;
+    height:60px;
+    font-family: "Montserrat";
+    font-size:16px;
+    font-weight: 600;
+    color:$white;
+    border:none;
+}
+.starRequired{
+    color:$orangeColor;
+}
+.btnLogIn{
+    border:none;
+    background: none;
+    display: flex;
+    gap:3px;
+    @include text-second;
+}
+.text-sign-up{
+    color:$orangeColor;
+    text-decoration: underline;
+}
+@media(min-width:768px){
+    .wrapperRegistration{
+        width:768px;
+        height: 760px;
+        background-image: url("../assets/images/backgroundRegistrationTablet.png");
+    }
+    .wrapperLayout{
+        width:768px;
+        height: 700px;
+        padding-top: 60px;
+    }
+    .formRegistration{
+        background-color: $white;
+        width:400px;
+        height: 610px;
+        margin:auto;
+    }
+    .formRegistration  label{
+        color:$greyColor;
+    }
+    .inputRegistration{
+        width:320px;
+    }
+}
+@media(min-width:1440px){
+    .wrapperElement{
+        width:1280px;
+        display: flex;
+        margin: auto;
+    }
+    .wrapperRegistration{
+        width:565px;
+        background-image: url("../assets/images/backgroundRegistrationDesktop.png");
+    }
+    .wrapperLayout{
+        width:565px;
+    }
+}
