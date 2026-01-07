@@ -1,0 +1,30 @@
+.titleInfo {
+    @include title-text;
+    font-size: 34px;
+    text-align: center;
+}
+.containerInfo{
+    width:320px;
+    height:588px;
+    display: flex;
+    background-color: $white;
+    margin: 10px auto 0;
+    flex-direction: column;
+    gap:20px;
+    padding-top: 30px;
+}
+.containerOption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+}
+.textOption{
+    @include text-second;
+    width:254px;
+}
+.titleOption{
+    @include text-second;
+    font-size: 20px;
+    color:$colorTitle;
+}

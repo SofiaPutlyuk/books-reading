@@ -1,0 +1,11 @@
+@mixin title-text {
+font-weight: bold;
+font-family: "Abril Fatface";
+color: $colorTitle;
+}
+@mixin text-second {
+font-family: "Montserrat";
+font-weight: 500;
+font-size: 14px;
+color:$greyColor;
+}
