@@ -199,7 +199,7 @@
   gap: 10px;
 }
 
-.inputRegistration {
+.inputAccount {
   width: 270px;
   height: 42px;
   background-color: #F5F7FA;
@@ -208,10 +208,10 @@
   box-shadow: 0px 1px 2px 0px rgba(29, 29, 27, 0.1490196078) inset;
   padding-left: 20px;
 }
-.inputRegistration::placeholder {
+.inputAccount::placeholder {
   color: #A6ABB9;
 }
-.inputRegistration:focus {
+.inputAccount:focus {
   border-color: #FF6B08;
 }
 
@@ -219,7 +219,7 @@
   display: inline-flex;
 }
 
-.btnSignUp {
+.btnAccount {
   background-color: #FF6B08;
   width: 270px;
   height: 60px;
@@ -270,7 +270,7 @@
   .formRegistration label {
     color: #898F9F;
   }
-  .inputRegistration {
+  .inputAccount {
     width: 320px;
   }
 }
@@ -286,5 +286,130 @@
   }
   .wrapperLayout {
     width: 565px;
+  }
+}
+.wrapperLogin {
+  background-image: url("../assets/images/backgroundMobileLogin.png");
+  background-repeat: no-repeat;
+  width: 320px;
+  height: 460px;
+  margin: auto;
+}
+
+.wrapperLayoutLogin {
+  background-color: rgba(9, 30, 63, 0.8);
+  width: 320px;
+  height: 420px;
+  padding-top: 40px;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.formLogin label {
+  display: flex;
+  flex-direction: column;
+  color: #FFF;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-registrationText {
+  text-decoration: underline;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  font-size: 13px;
+  border: none;
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .wrapperLogin {
+    width: 768px;
+    height: 620px;
+    background-size: cover;
+    background-image: url("../assets/images/backgroundTabletLogin.png");
+  }
+  .wrapperLayoutLogin {
+    width: 768px;
+    height: 540px;
+    padding-top: 80px;
+  }
+  .formLogin {
+    background-color: #FFF;
+    width: 400px;
+    height: 420px;
+    margin: auto;
+    gap: 20px;
+  }
+}
+.wrapperQuote {
+  width: 316px;
+  background-color: #FFF;
+  height: 176px;
+  display: flex;
+  align-items: center;
+  margin: 10px auto 0;
+}
+
+.containerQuote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  gap: 10px;
+}
+
+.dash-quote {
+  width: 100px;
+  color: #242A37;
+}
+
+.text-author {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  color: #242A37;
+}
+
+.text-quote {
+  width: 229px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  font-size: 13px;
+  color: #242A37;
+}
+
+@media (min-width: 768px) {
+  .wrapperQuote {
+    width: 594px;
+    height: 404px;
+  }
+  .containerQuote {
+    gap: 40px;
+  }
+  .text-quote {
+    width: 526px;
+    font-size: 24px;
+  }
+  .dash-quote {
+    width: 150px;
+  }
+  .text-author {
+    font-size: 20px;
+  }
+  .quote-icon {
+    width: 31px;
   }
 }

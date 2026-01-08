@@ -1,0 +1,86 @@
+.wrapperLogin {
+    background-image: url("../assets/images/backgroundMobileLogin.png");
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 460px;
+    margin: auto;
+}
+
+.wrapperLayoutLogin {
+    background-color: $darkBlue;
+    width: 320px;
+    height: 460px;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    top: 5%;
+
+}
+
+.formLogin label {
+    display: flex;
+    flex-direction: column;
+    color: $white;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-registrationText {
+    text-decoration: underline;
+    @include text-second;
+    font-size: 13px;
+    border: none;
+    background: none;
+}
+
+@media(min-width:768px) {
+    .wrapperLogin {
+        width: 768px;
+        height: 620px;
+        background-size: cover;
+        background-image: url("../assets/images/backgroundTabletLogin.png");
+    }
+
+    .wrapperLayoutLogin {
+        width: 768px;
+        height: 620px;
+    }
+
+    .formLogin {
+        background-color: $white;
+        width: 400px;
+        height: 420px;
+        margin: auto;
+        gap: 20px;
+        top:15%;
+    }
+}
+
+@media(min-width:1440px) {
+    .wrapperElementLogin {
+        display: flex;
+        width: 1280px;
+        margin: auto;
+        align-items: center;
+    }
+
+    .wrapperLogin {
+        background-image: url("../assets/images/backgroundRegistrationDesktop.png");
+        width: 565px;
+        height: 850px;
+    }
+
+    .wrapperLayoutLogin {
+        width: 565px;
+        height: 850px;
+    }
+    .formLogin{
+        top:25%;
+    }
+}

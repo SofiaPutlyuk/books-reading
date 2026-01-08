@@ -3,8 +3,10 @@ import googleIcon from "../../assets/svg/googleIcon.svg"
 import { postRegistrationUser } from "../../redux/thunk/thunkRegistration"
 import {useSelector , useDispatch} from "react-redux"
 import { RootState, AppDispatch } from "../../redux/store"
+import { useNavigate } from "react-router-dom"
 export const Registration = () => {
 const info = useSelector((state:RootState) => state.registration.info)
+const navigate = useNavigate()
 console.log(info)
 const dispatch = useDispatch<AppDispatch>()
     return (
@@ -26,22 +28,22 @@ const dispatch = useDispatch<AppDispatch>()
                             </span>Google</button>
                         <label>
                             <p style={{ flexDirection: "row" }}>Ім’я <span className="starRequired">*</span></p>
-                            <input type="text" name="name" placeholder="..." className="inputRegistration" />
+                            <input type="text" name="name" placeholder="..." className="inputAccount" />
                         </label>
                         <label>
                             <p style={{ flexDirection: "row" }}>Електронна адреса <span className="starRequired">*</span></p>
-                            <input type="email" name="email" placeholder="your@email.com" className="inputRegistration" />
+                            <input type="email" name="email" placeholder="your@email.com" className="inputAccount" />
                         </label>
                         <label>
                             <p style={{ flexDirection: "row" }}>Пароль <span className="starRequired">*</span></p>
-                            <input type="password" name="password" placeholder="..." className="inputRegistration" />
+                            <input type="password" name="password" placeholder="..." className="inputAccount" />
                         </label>
                         <label>
                             <p style={{ flexDirection: "row" }}>Підтвердити пароль <span className="starRequired">*</span></p>
-                            <input type="password" name="confirmPassword" placeholder="..." className="inputRegistration" />
+                            <input type="password" name="confirmPassword" placeholder="..." className="inputAccount" />
                         </label>
-                        <button className="btnSignUp">Зареєструватися</button>
-                        <button className="btnLogIn">
+                        <button className="btnAccount">Зареєструватися</button>
+                        <button className="btnLogIn" onClick={() => navigate("/login")}>
                             Вже з нами?
                             <span className="text-sign-up">Увійти</span>
                         </button>
