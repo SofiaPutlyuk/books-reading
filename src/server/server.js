@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const app = express()
 const routerRegistration = require("./routes/RegistrationRouter")
+const routerLogin = require("./routes/LoginRouter")
 const connectDB = require("../db")
 const PORT = 5000
 connectDB()
@@ -13,6 +14,7 @@ app.use(cors({
     credentials: true
 }))
 app.use("/api/registrationUser" , routerRegistration)
+app.use("/api/loginUser", routerLogin)
 app.listen(PORT , () => {
     console.log("Знайдено сторінку", PORT)
 }) 

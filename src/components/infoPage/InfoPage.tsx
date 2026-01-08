@@ -28,7 +28,7 @@ export const InfoPage = () => {
                 </div>
                 {!isSignUpPage && (
                     <div className="wrapperButton">
-                        <button className="btnOptionLog">Увійти</button>
+                        <button className="btnOptionLog" onClick={() => navigate("/login")}>Увійти</button>
                         <button className="btnOptionSign" onClick={() => navigate("/sign-up")}>Реєстрація</button>
                     </div>
                 )}

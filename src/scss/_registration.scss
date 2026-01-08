@@ -45,7 +45,7 @@
     font-weight: 600;
     gap:10px;
 }
-.inputRegistration {
+.inputAccount {
     width: 270px;
     height: 42px;
     background-color: $secondWhite;
@@ -64,7 +64,7 @@
 .labelText{
     display: inline-flex;
 }
-.btnSignUp {
+.btnAccount {
     background-color: $orangeColor;
     width:270px;
     height:60px;
@@ -108,7 +108,7 @@
     .formRegistration  label{
         color:$greyColor;
     }
-    .inputRegistration{
+    .inputAccount{
         width:320px;
     }
 }
