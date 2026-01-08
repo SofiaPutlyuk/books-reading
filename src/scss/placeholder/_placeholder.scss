@@ -1,15 +1,21 @@
 @mixin title-text {
-font-weight: bold;
-font-family: "Abril Fatface";
-color: $colorTitle;
+    font-weight: bold;
+    font-family: "Abril Fatface";
+    color: $colorTitle;
 }
+
 @mixin text-second {
-font-family: "Montserrat";
-font-weight: 500;
-font-size: 14px;
-color:$greyColor;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 14px;
+    color: $greyColor;
 }
+
 @mixin button-option {
-    width:127px;
+    width: 127px;
     height: 40px;
+
+    @media(min-width:768px) {
+        width: 200px;
+    }
 }
