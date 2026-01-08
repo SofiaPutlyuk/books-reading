@@ -44,36 +44,52 @@
 .btnOptionSign {
     @include button-option;
     @include text-second;
-    color:$white;
-    background-color:$orangeColor;
-    border:none;
+    color: $white;
+    background-color: $orangeColor;
+    border: none;
 }
+
 .wrapperTextOption {
     margin-left: 20px;
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
 }
-.wrapperButton{
+
+.wrapperButton {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap:20px;
+    gap: 20px;
     justify-content: center;
 }
-@media(min-width:768px){
-    .wrapperButton{
-        display: none;
+
+@media(min-width:768px) {
+    .wrapperTextOption {
+        align-items: start;
     }
-    .titleOption{
+
+    .containerInfo {
+        width: 768px;
+    }
+
+    .titleOption {
         font-size: 20px;
     }
-    .textOption{
-        width:400px;
+
+    .textOption {
+        width: 461px;
     }
 }
-@media(min-width:1440px){
-    .containerInfo{
-        width:715px;
+
+@media(min-width:1440px) {
+    .containerInfo {
+        width: 715px;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .wrapperTextOption {
+        margin-left: 75px;
     }
 }

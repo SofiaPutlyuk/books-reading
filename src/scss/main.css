@@ -15,6 +15,22 @@
   margin: auto;
 }
 
+@media (min-width: 768px) {
+  .headerReading {
+    width: 768px;
+  }
+  .titleHeader {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+}
+@media (min-width: 1440px) {
+  .headerReading {
+    width: 1280px;
+  }
+}
 .titleInfo {
   font-weight: bold;
   font-family: "Abril Fatface";
@@ -69,6 +85,11 @@
   color: #242A37;
   background: none;
 }
+@media (min-width: 768px) {
+  .btnOptionLog {
+    width: 200px;
+  }
+}
 
 .btnOptionSign {
   width: 127px;
@@ -81,6 +102,18 @@
   background-color: #FF6B08;
   border: none;
 }
+@media (min-width: 768px) {
+  .btnOptionSign {
+    width: 200px;
+  }
+}
+
+.wrapperTextOption {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 .wrapperButton {
   display: flex;
@@ -90,18 +123,41 @@
   justify-content: center;
 }
 
+@media (min-width: 768px) {
+  .wrapperTextOption {
+    align-items: start;
+  }
+  .containerInfo {
+    width: 768px;
+  }
+  .titleOption {
+    font-size: 20px;
+  }
+  .textOption {
+    width: 461px;
+  }
+}
+@media (min-width: 1440px) {
+  .containerInfo {
+    width: 715px;
+    gap: 40px;
+    justify-content: center;
+  }
+  .wrapperTextOption {
+    margin-left: 75px;
+  }
+}
 .wrapperRegistration {
   background-image: url("../assets/images/backgroundRegistration.png");
-  background-size: contain;
   background-repeat: no-repeat;
   width: 320px;
-  height: 648px;
+  height: 618px;
   margin: auto;
 }
 
 .wrapperLayout {
   width: 320px;
-  height: 648px;
+  height: 618px;
   background-color: rgba(9, 30, 63, 0.8);
 }
 
@@ -127,7 +183,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 30px;
-  gap: 30px;
+  gap: 26px;
 }
 
 .formRegistration label {
@@ -147,10 +203,88 @@
   width: 270px;
   height: 42px;
   background-color: #F5F7FA;
-  border: none;
+  border: 1px solid transparent;
+  outline: none;
   box-shadow: 0px 1px 2px 0px rgba(29, 29, 27, 0.1490196078) inset;
   padding-left: 20px;
 }
 .inputRegistration::placeholder {
   color: #A6ABB9;
+}
+.inputRegistration:focus {
+  border-color: #FF6B08;
+}
+
+.labelText {
+  display: inline-flex;
+}
+
+.btnSignUp {
+  background-color: #FF6B08;
+  width: 270px;
+  height: 60px;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFF;
+  border: none;
+}
+
+.starRequired {
+  color: #FF6B08;
+}
+
+.btnLogIn {
+  border: none;
+  background: none;
+  display: flex;
+  gap: 3px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+}
+
+.text-sign-up {
+  color: #FF6B08;
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .wrapperRegistration {
+    width: 768px;
+    height: 760px;
+    background-image: url("../assets/images/backgroundRegistrationTablet.png");
+  }
+  .wrapperLayout {
+    width: 768px;
+    height: 700px;
+    padding-top: 60px;
+  }
+  .formRegistration {
+    background-color: #FFF;
+    width: 400px;
+    height: 610px;
+    margin: auto;
+  }
+  .formRegistration label {
+    color: #898F9F;
+  }
+  .inputRegistration {
+    width: 320px;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapperElement {
+    width: 1280px;
+    display: flex;
+    margin: auto;
+  }
+  .wrapperRegistration {
+    width: 565px;
+    background-image: url("../assets/images/backgroundRegistrationDesktop.png");
+  }
+  .wrapperLayout {
+    width: 565px;
+  }
 }

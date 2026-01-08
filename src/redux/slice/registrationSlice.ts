@@ -32,7 +32,7 @@ const registrationSlice = createSlice({
         state.error = null
     })
     .addCase(getRegistrationUser.rejected, (state, action) => {
-        state.error = null
+         state.error = action.payload as string
     })
     .addCase(postRegistrationUser.fulfilled, (state, action) => {
         state.isLoading = false
