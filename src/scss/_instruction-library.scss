@@ -1,0 +1,53 @@
+.wrapperInstruction {
+    width: 255px;
+    height: 425px;
+    background-color: $white;
+    box-shadow: 0px 2px 3px 0px $boxShadowColor;
+    margin: 85px 20px 85px 25px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1;
+    position:absolute;
+}
+.overlay-instruction{
+    position: fixed;
+    width:320px;
+    height: 648px;
+    background-color: $overlayColor;
+}
+.wrapperSubtitle {
+    display: flex;
+    gap: 9px;
+    align-items: start;
+}
+.text-step{
+    font-family: "Montserrat";
+    font-size:18px;
+    font-weight: 600
+}
+.text-subtitle {
+    @include text-second;
+    color: $colorTitle;
+    width: 209px;
+}
+.text-instructionDescription{
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 400;
+    color:$greyColor;
+    width: 190px;
+}
+.btn-instruction{
+    @include text-second;
+    background-color: $orangeColorDarker;
+    border:none;
+    color:$white;
+    width:127px;
+    height: 40px;
+    box-shadow: 0px 2px 4px 0px $black;
+    margin:0 auto;
+
+}

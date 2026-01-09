@@ -1,0 +1,45 @@
+.wrapperLibrary{
+    background-color: $greyLightSecond;
+    width:320px;
+    height: 588px;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.btnAddBook {
+ width:171px;
+ height: 42px;
+ border: 1px solid $colorTitle;
+ background: none;
+}
+.inputAddBook {
+    width:255px;
+    height: 42px;
+    border: 1px solid $greyLight;
+    padding-left:15px;
+    background-color: $greyLightSecond;
+    &:focus{
+        background-color: $white;
+    }
+}
+.formLibrary{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.formLibrary label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include text-second;
+}
+.btnBack{
+    background: none;
+    border:none;
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 20px;
+}

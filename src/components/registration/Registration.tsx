@@ -2,13 +2,13 @@ import { InfoPage } from "../infoPage/InfoPage"
 import googleIcon from "../../assets/svg/googleIcon.svg"
 import { postRegistrationUser } from "../../redux/thunk/thunkRegistration"
 import {useSelector , useDispatch} from "react-redux"
-import { RootState, AppDispatch } from "../../redux/store"
+// import { RootState, AppDispatch } from "../../redux/store"
 import { useNavigate } from "react-router-dom"
 export const Registration = () => {
-const info = useSelector((state:RootState) => state.registration.info)
+// const info = useSelector((state:RootState) => state.registration.info)
 const navigate = useNavigate()
-console.log(info)
-const dispatch = useDispatch<AppDispatch>()
+// console.log(info)
+// const dispatch = useDispatch<AppDispatch>()
     return (
         <div className="wrapperElement">
             <div className="wrapperRegistration">
@@ -20,7 +20,7 @@ const dispatch = useDispatch<AppDispatch>()
                      const email = (form.elements.namedItem("email") as HTMLInputElement).value
                      const password = (form.elements.namedItem("password") as HTMLInputElement).value
                      const confirmPassword = (form.elements.namedItem("confirmPassword") as HTMLInputElement).value
-                     dispatch(postRegistrationUser({name,email,password,confirmPassword}))
+                    //  dispatch(postRegistrationUser({name,email,password,confirmPassword}))
                     }}>
                         <button className="btnGoogle">
                             <span>
@@ -42,7 +42,7 @@ const dispatch = useDispatch<AppDispatch>()
                             <p style={{ flexDirection: "row" }}>Підтвердити пароль <span className="starRequired">*</span></p>
                             <input type="password" name="confirmPassword" placeholder="..." className="inputAccount" />
                         </label>
-                        <button className="btnAccount">Зареєструватися</button>
+                        <button className="btnAccount" onClick={() => navigate("/library")}>Зареєструватися</button>
                         <button className="btnLogIn" onClick={() => navigate("/login")}>
                             Вже з нами?
                             <span className="text-sign-up">Увійти</span>
