@@ -19,7 +19,7 @@
     width: 255px;
     height: 42px;
     border: 1px solid $greyLight;
-    padding-left: 15px;
+    padding: 0 0 0 15px;
     background-color: $greyLightSecond;
 
     &:focus {
@@ -84,5 +84,20 @@
     }
     .btnBack{
         display: none;
+    }
+}
+@media(min-width:1440px){
+    .wrapperLibrary{
+        width:1280px;
+    }
+    .formLibrary{
+        flex-direction: row;
+        align-items: end;
+    }
+    .formLibrary label:first-of-type .inputAddBook {
+        width:346px;
+    }
+    .inputAddBook{
+        width:130px;
     }
 }
