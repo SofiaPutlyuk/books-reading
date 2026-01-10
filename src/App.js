@@ -4,6 +4,7 @@ import { InfoPage } from "./components/infoPage/InfoPage";
 import {Registration} from "./components/registration/Registration"
 import {Login} from "./components/login/Login"
 import {LayOut} from "./components/layout/Layout"
+import {LibraryPage} from "./components/library/LibraryPage"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<InfoPage />} />
         <Route path="/sign-up" element={<Registration />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/library" element={<LibraryPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

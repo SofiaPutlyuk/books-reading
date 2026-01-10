@@ -22,6 +22,14 @@ export const getRegistrationUser = createAsyncThunk<registrationData[], void, { 
 export const postRegistrationUser = createAsyncThunk<registrationData, newRegistrationUser, { state: RootState }>(
     "registration/postRegistrationUser",
     async (userRegistration, thunkApi) => {
+        if(!userRegistration.name || !userRegistration.email || !userRegistration.password || !userRegistration.confirmPassword){
+            alert("Заповніть поля!")
+            return thunkApi.rejectWithValue("Заповніть поля!");
+        }
+        if(userRegistration.password !== userRegistration.confirmPassword){
+            alert("Невірний пароль")
+            return thunkApi.rejectWithValue("Невірний пароль")
+        }
         try {
             const response = await fetch("http://localhost:5000/api/registrationUser", {
                 method: "POST",

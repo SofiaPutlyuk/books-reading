@@ -1,0 +1,103 @@
+.wrapperLibrary {
+    background-color: $greyLightSecond;
+    width: 320px;
+    height: 588px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.btnAddBook {
+    width: 171px;
+    height: 42px;
+    border: 1px solid $colorTitle;
+    background: none;
+}
+
+.inputAddBook {
+    width: 255px;
+    height: 42px;
+    border: 1px solid $greyLight;
+    padding: 0 0 0 15px;
+    background-color: $greyLightSecond;
+
+    &:focus {
+        background-color: $white;
+    }
+}
+
+.formLibrary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.formLibrary label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include text-second;
+}
+
+.btnBack {
+    background: none;
+    border: none;
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.formLibrary div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media(min-width:768px) {
+    .wrapperLibrary {
+        width: 768px;
+        height: 1025px;
+    }
+
+    .formLibrary label:first-of-type .inputAddBook {
+        width: 594px;
+    }
+
+    .formLibrary div label:nth-child(1) .inputAddBook {
+        width: 250px;
+    }
+
+    .inputAddBook {
+        width: 145px;
+    }
+
+    .formLibrary div {
+        flex-direction: row;
+    }
+
+    .formLibrary {
+        gap: 30px;
+        margin-top:40px;
+    }
+    .btnBack{
+        display: none;
+    }
+}
+@media(min-width:1440px){
+    .wrapperLibrary{
+        width:1280px;
+    }
+    .formLibrary{
+        flex-direction: row;
+        align-items: end;
+    }
+    .formLibrary label:first-of-type .inputAddBook {
+        width:346px;
+    }
+    .inputAddBook{
+        width:130px;
+    }
+}

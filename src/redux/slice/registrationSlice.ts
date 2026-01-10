@@ -9,11 +9,13 @@ export interface registrationData {
 export interface registrationState{
     isLoading:boolean,
     error:string | null,
+    isSuccess:boolean,
     info:registrationData[]
 }
 const initialState:registrationState = {
     isLoading:false,
     error:null,
+    isSuccess:false,
     info:[]
 }
 const registrationSlice = createSlice({
@@ -37,6 +39,7 @@ const registrationSlice = createSlice({
     .addCase(postRegistrationUser.fulfilled, (state, action) => {
         state.isLoading = false
         state.info.push(action.payload)
+        state.isSuccess = true
         state.error = null
     })
     },

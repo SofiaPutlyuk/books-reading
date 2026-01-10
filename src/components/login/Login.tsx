@@ -1,13 +1,12 @@
 import { QuoteWrapper } from "./quote/QuoteWrapper"
 import googleIcon from "../../assets/svg/googleIcon.svg"
 import { useNavigate } from "react-router-dom"
-import { RootState,AppDispatch } from "../../redux/store"
 import { postLoginUser } from "../../redux/thunk/thunkLogin"
-import { useSelector,useDispatch } from "react-redux"
+import { useAppSelector, useAppDispatch } from "../../redux/hook"
 export const Login = () => {
-const user = useSelector((state:RootState) => state.login.info)
+const user = useAppSelector((state) => state.login.info)
 console.log(user)
-const dispatch = useDispatch<AppDispatch>()
+const dispatch = useAppDispatch()
 const navigate = useNavigate()
     return (
         <div className="wrapperElementLogin">
@@ -34,7 +33,7 @@ const navigate = useNavigate()
                               <p style={{ flexDirection: "row" }}>Пароль <span className="starRequired">*</span></p>
                             <input type="password" placeholder="Пароль" className="inputAccount" name="password"/>
                         </label>
-                        <button className="btnAccount">Увійти</button>
+                        <button className="btnAccount" onClick={() => navigate("/library")}>Увійти</button>
                         <button className="btn-registrationText" style={{color:"#FF6B08"}} onClick={() => navigate("/sign-up")}>Реєстрація</button>
                     </form>
                 </div>

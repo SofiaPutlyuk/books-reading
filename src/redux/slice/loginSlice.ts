@@ -26,13 +26,14 @@ const loginSlice = createSlice({
     extraReducers(builder) {
         builder
         .addCase(postLoginUser.pending, (state) => {
-            state.isLoading = true,
+            state.isLoading = true
             state.error = null
         })
         .addCase(postLoginUser.fulfilled, (state,action) => {
-            state.isLoading = false,
+            state.isLoading = false
             state.info = action.payload
             state.error = null
+            state.isLogin = true
         })
         .addCase(postLoginUser.rejected,(state,action) => {
           state.error = action.payload || "Помилка сервера"
