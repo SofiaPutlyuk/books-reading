@@ -299,8 +299,7 @@
 .wrapperLayoutLogin {
   background-color: rgba(9, 30, 63, 0.8);
   width: 320px;
-  height: 420px;
-  padding-top: 40px;
+  height: 460px;
 }
 
 .formLogin {
@@ -309,6 +308,8 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+  position: relative;
+  top: 5%;
 }
 
 .formLogin label {
@@ -339,8 +340,7 @@
   }
   .wrapperLayoutLogin {
     width: 768px;
-    height: 540px;
-    padding-top: 80px;
+    height: 620px;
   }
   .formLogin {
     background-color: #FFF;
@@ -348,6 +348,27 @@
     height: 420px;
     margin: auto;
     gap: 20px;
+    top: 15%;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapperElementLogin {
+    display: flex;
+    width: 1280px;
+    margin: auto;
+    align-items: center;
+  }
+  .wrapperLogin {
+    background-image: url("../assets/images/backgroundRegistrationDesktop.png");
+    width: 565px;
+    height: 850px;
+  }
+  .wrapperLayoutLogin {
+    width: 565px;
+    height: 850px;
+  }
+  .formLogin {
+    top: 25%;
   }
 }
 .wrapperQuote {
@@ -402,6 +423,7 @@
   .text-quote {
     width: 526px;
     font-size: 24px;
+    line-height: 38px;
   }
   .dash-quote {
     width: 150px;
@@ -411,5 +433,257 @@
   }
   .quote-icon {
     width: 31px;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapperQuote {
+    width: 713px;
+  }
+  .text-quote {
+    font-size: 24px;
+    width: 397px;
+  }
+}
+.wrapperInstruction {
+  width: 255px;
+  height: 425px;
+  background-color: #FFF;
+  box-shadow: 0px 2px 3px 0px rgba(9, 30, 63, 0.1019607843);
+  margin: 85px 20px 85px 25px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+  position: absolute;
+}
+
+.overlay-instruction {
+  position: fixed;
+  width: 320px;
+  height: 648px;
+  background-color: rgba(43, 43, 43, 0.1019607843);
+}
+
+.wrapperSubtitle {
+  display: flex;
+  gap: 9px;
+  align-items: start;
+}
+
+.text-step {
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text-subtitle {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  color: #242A37;
+  width: 209px;
+}
+
+.text-instructionDescription {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 400;
+  color: #898F9F;
+  width: 190px;
+}
+
+.btn-instruction {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  background-color: #D15807;
+  border: none;
+  color: #FFF;
+  width: 127px;
+  height: 40px;
+  box-shadow: 0px 2px 4px 0px #000000;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .overlay-instruction {
+    background-color: transparent;
+    position: relative;
+  }
+  .wrapperInstruction {
+    margin: 0;
+    width: 570px;
+    height: 270px;
+    transform: translate(16%);
+  }
+  .text-step {
+    font-size: 19px;
+    font-family: "Montserrat";
+    font-weight: 600;
+  }
+  .text-subtitle {
+    width: 309px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .text-instructionDescription {
+    width: 421px;
+  }
+  .btn-instruction {
+    display: none;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapperInstruction {
+    transform: translate(60%);
+  }
+}
+.wrapperLibrary {
+  background-color: #F6F7FB;
+  width: 320px;
+  height: 588px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.btnAddBook {
+  width: 171px;
+  height: 42px;
+  border: 1px solid #242A37;
+  background: none;
+}
+
+.inputAddBook {
+  width: 255px;
+  height: 42px;
+  border: 1px solid #A6ABB9;
+  padding: 0 0 0 15px;
+  background-color: #F6F7FB;
+}
+.inputAddBook:focus {
+  background-color: #FFF;
+}
+
+.formLibrary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.formLibrary label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+}
+
+.btnBack {
+  background: none;
+  border: none;
+  text-align: start;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.formLibrary div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .wrapperLibrary {
+    width: 768px;
+    height: 1025px;
+  }
+  .formLibrary label:first-of-type .inputAddBook {
+    width: 594px;
+  }
+  .formLibrary div label:nth-child(1) .inputAddBook {
+    width: 250px;
+  }
+  .inputAddBook {
+    width: 145px;
+  }
+  .formLibrary div {
+    flex-direction: row;
+  }
+  .formLibrary {
+    gap: 30px;
+    margin-top: 40px;
+  }
+  .btnBack {
+    display: none;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapperLibrary {
+    width: 1280px;
+  }
+  .formLibrary {
+    flex-direction: row;
+    align-items: end;
+  }
+  .formLibrary label:first-of-type .inputAddBook {
+    width: 346px;
+  }
+  .inputAddBook {
+    width: 130px;
+  }
+}
+.wrapperIntention {
+  width: 270px;
+  height: 178px;
+  background-color: #FFF;
+  margin: auto;
+  box-shadow: 0px 2px 3px 0px rgba(9, 30, 63, 0.1019607843);
+}
+
+.wrapperTitle {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+  gap: 13px;
+  align-items: start;
+}
+
+.wrapperDescription {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+.title-intention {
+  color: #242A37;
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .wrapperIntention {
+    width: 678px;
+    height: 62px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .wrapperDescription {
+    flex-direction: row;
+  }
+  .wrapperTitle {
+    margin-top: 0;
   }
 }

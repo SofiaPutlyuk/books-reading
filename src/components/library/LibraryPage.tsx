@@ -4,6 +4,8 @@ import { useState } from "react"
 import { useAppSelector,useAppDispatch } from "../../redux/hook"
 import { postBook } from "../../redux/thunk/thunkBook"
 import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import { LibraryIntention } from "./LibraryIntention"
 export const LibraryPage = () => {
 const [showInstruction, setShowInstruction] = useState(true)
 const closeModal = () => {
@@ -13,9 +15,11 @@ const infoBook = useAppSelector(state => state.book.info)
 const isSuccess = useAppSelector(state => state.book.isSuccess)
 console.log(infoBook)
 const dispatch = useAppDispatch()
+const navigate = useNavigate()
 useEffect(() => {
   if(isSuccess){
     setShowInstruction(false)
+    navigate("/intention")
   }
 })
     return(
@@ -51,6 +55,7 @@ useEffect(() => {
                 <button className="btnAddBook" type="submit">Додати</button>
             </form>
            {showInstruction && <LibraryInstructionStep closeModal={closeModal}/>}
+           {isSuccess && <LibraryIntention lists={infoBook}/>}
         </div>
     )
 }
