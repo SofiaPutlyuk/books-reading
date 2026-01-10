@@ -1,14 +1,20 @@
 import { InfoPage } from "../infoPage/InfoPage"
 import googleIcon from "../../assets/svg/googleIcon.svg"
 import { postRegistrationUser } from "../../redux/thunk/thunkRegistration"
-import {useSelector , useDispatch} from "react-redux"
-// import { RootState, AppDispatch } from "../../redux/store"
+import { useAppSelector , useAppDispatch } from "../../redux/hook"
 import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 export const Registration = () => {
-// const info = useSelector((state:RootState) => state.registration.info)
+const info = useAppSelector((state) => state.registration.info)
+console.log(info)
 const navigate = useNavigate()
-// console.log(info)
-// const dispatch = useDispatch<AppDispatch>()
+const dispatch = useAppDispatch()
+const isSuccess = useAppSelector((state) => state.registration.isSuccess)
+useEffect(() => {
+if(isSuccess){
+navigate("/library")
+}
+}, [navigate,isSuccess])
     return (
         <div className="wrapperElement">
             <div className="wrapperRegistration">
@@ -20,7 +26,7 @@ const navigate = useNavigate()
                      const email = (form.elements.namedItem("email") as HTMLInputElement).value
                      const password = (form.elements.namedItem("password") as HTMLInputElement).value
                      const confirmPassword = (form.elements.namedItem("confirmPassword") as HTMLInputElement).value
-                    //  dispatch(postRegistrationUser({name,email,password,confirmPassword}))
+                     dispatch(postRegistrationUser({name,email,password,confirmPassword}))
                     }}>
                         <button className="btnGoogle">
                             <span>
@@ -42,8 +48,8 @@ const navigate = useNavigate()
                             <p style={{ flexDirection: "row" }}>Підтвердити пароль <span className="starRequired">*</span></p>
                             <input type="password" name="confirmPassword" placeholder="..." className="inputAccount" />
                         </label>
-                        <button className="btnAccount" onClick={() => navigate("/library")}>Зареєструватися</button>
-                        <button className="btnLogIn" onClick={() => navigate("/login")}>
+                        <button className="btnAccount"  type="submit">Зареєструватися</button>
+                        <button className="btnLogIn" onClick={() => navigate("/login")} type="button">
                             Вже з нами?
                             <span className="text-sign-up">Увійти</span>
                         </button>

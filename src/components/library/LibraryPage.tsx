@@ -14,6 +14,7 @@ const closeModal = () => {
                     Назва книги
                     <input type="text" placeholder="..." name="name" className="inputAddBook"/>
                 </label>
+                <div >
                 <label>
                     Автор книги
                     <input type="text" placeholder="..." name="author" className="inputAddBook"/>
@@ -26,6 +27,7 @@ const closeModal = () => {
                     Кількість сторінок
                     <input type="number" placeholder="..." name="page" className="inputAddBook"/>
                 </label>
+                </div>
                 <button className="btnAddBook">Додати</button>
             </form>
            {showInstruction && <LibraryInstructionStep closeModal={closeModal}/>}

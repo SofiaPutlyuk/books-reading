@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
     registration: registrationReducer,
     login: loginReducer
 })
-export type RootState = typeof rootReducer
+export type RootState = ReturnType<typeof rootReducer>
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 const store = configureStore({
     reducer: persistedReducer

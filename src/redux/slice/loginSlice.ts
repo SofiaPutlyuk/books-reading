@@ -33,6 +33,7 @@ const loginSlice = createSlice({
             state.isLoading = false
             state.info = action.payload
             state.error = null
+            state.isLogin = true
         })
         .addCase(postLoginUser.rejected,(state,action) => {
           state.error = action.payload || "Помилка сервера"

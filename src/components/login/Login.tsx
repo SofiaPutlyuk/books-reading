@@ -1,13 +1,12 @@
 import { QuoteWrapper } from "./quote/QuoteWrapper"
 import googleIcon from "../../assets/svg/googleIcon.svg"
 import { useNavigate } from "react-router-dom"
-// import { RootState,AppDispatch } from "../../redux/store"
 import { postLoginUser } from "../../redux/thunk/thunkLogin"
-import { useSelector,useDispatch } from "react-redux"
+import { useAppSelector, useAppDispatch } from "../../redux/hook"
 export const Login = () => {
-// const user = useSelector((state:RootState) => state.login)
-// console.log(user)
-// const dispatch = useDispatch<AppDispatch>()
+const user = useAppSelector((state) => state.login.info)
+console.log(user)
+const dispatch = useAppDispatch()
 const navigate = useNavigate()
     return (
         <div className="wrapperElementLogin">
@@ -18,7 +17,7 @@ const navigate = useNavigate()
                     const form =e.currentTarget
                     const email = (form.elements.namedItem("email") as HTMLInputElement).value
                     const password = (form.elements.namedItem("password") as HTMLInputElement).value
-                    // dispatch(postLoginUser({email, password}))
+                    dispatch(postLoginUser({email, password}))
                     }}>
                         <button className="btnGoogle">
                             <span>

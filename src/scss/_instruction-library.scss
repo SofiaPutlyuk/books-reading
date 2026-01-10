@@ -51,3 +51,31 @@
     margin:0 auto;
 
 }
+@media(min-width:768px){
+    .overlay-instruction{
+        background-color: transparent;
+        position: relative;
+    }
+    .wrapperInstruction{
+        margin:0;
+        width:570px;
+        height: 270px;
+        transform: translate(16%);
+    }
+    .text-step{
+        font-size: 19px;
+        font-family: "Montserrat";
+        font-weight: 600;
+    }
+    .text-subtitle{
+        width:309px;
+        font-size:16px;
+        font-weight: 600;
+    }
+    .text-instructionDescription{
+        width:421px;
+    }
+    .btn-instruction{
+        display: none;
+    }
+}
