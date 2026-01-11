@@ -19,3 +19,8 @@
         width: 200px;
     }
 }
+@mixin title {
+    font-family: "Montserrat";
+    font-size:19px;
+    font-weight:600;
+}

@@ -4,6 +4,7 @@ import { postRegistrationUser } from "../../redux/thunk/thunkRegistration"
 import { useAppSelector , useAppDispatch } from "../../redux/hook"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
+import { resetRegistration } from "../../redux/slice/registrationSlice"
 export const Registration = () => {
 const info = useAppSelector((state) => state.registration.info)
 console.log(info)
@@ -13,6 +14,7 @@ const isSuccess = useAppSelector((state) => state.registration.isSuccess)
 useEffect(() => {
 if(isSuccess){
 navigate("/library")
+dispatch(resetRegistration())
 }
 }, [navigate,isSuccess])
     return (
