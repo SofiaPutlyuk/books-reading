@@ -21,7 +21,11 @@ const initialState:registrationState = {
 const registrationSlice = createSlice({
     name:"registration",
     initialState,
-    reducers:{},
+    reducers:{
+        resetRegistration: (state) => {
+        state.isSuccess = false
+        }
+    },
     extraReducers(builder) {
         builder
     .addCase(getRegistrationUser.pending, (state, action) => {
@@ -44,4 +48,5 @@ const registrationSlice = createSlice({
     })
     },
 })
+export const {resetRegistration} = registrationSlice.actions
 export default registrationSlice.reducer

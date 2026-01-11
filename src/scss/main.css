@@ -602,7 +602,14 @@
   gap: 20px;
 }
 
+.library-intention {
+  display: none;
+}
+
 @media (min-width: 768px) {
+  .library-intention {
+    display: block;
+  }
   .wrapperLibrary {
     width: 768px;
     height: 1025px;
@@ -642,12 +649,31 @@
     width: 130px;
   }
 }
+.mainWrapperIntention {
+  width: 320px;
+  height: 690px;
+  background-color: #F6F7FB;
+  margin: auto;
+}
+
+.mainTitleIntention {
+  margin-left: 25px;
+  padding-top: 30px;
+  font-family: "Montserrat";
+  font-size: 19px;
+  font-weight: 600;
+}
+
 .wrapperIntention {
   width: 270px;
   height: 178px;
   background-color: #FFF;
   margin: auto;
   box-shadow: 0px 2px 3px 0px rgba(9, 30, 63, 0.1019607843);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .wrapperTitle {
@@ -659,11 +685,11 @@
 }
 
 .wrapperDescription {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 13px;
+  display: grid;
+  grid-template-columns: 60px auto;
+  row-gap: 6px;
+  column-gap: 8px;
+  margin: 10px auto;
 }
 
 .title-intention {
@@ -672,7 +698,31 @@
   font-weight: 500;
 }
 
+.subtitle-intention {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  font-size: 12px;
+}
+
+.info-intention {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  font-size: 12px;
+  color: #242A37;
+}
+
+.intentionHeader {
+  display: none;
+}
+
 @media (min-width: 768px) {
+  .mainWrapperIntention {
+    width: 768px;
+  }
   .wrapperIntention {
     width: 678px;
     height: 62px;
@@ -680,10 +730,35 @@
     flex-direction: row;
     align-items: center;
   }
-  .wrapperDescription {
-    flex-direction: row;
+  .intentionHeader {
+    display: grid;
+    grid-template-columns: 370px 1fr 90px 100px;
+    align-items: center;
+    margin: 20px 20px 0px 50px;
+  }
+  .subtitle-intention {
+    display: none;
+  }
+  .title-intention {
+    width: 240px;
+    font-size: 14px;
   }
   .wrapperTitle {
     margin-top: 0;
+    align-items: center;
+  }
+  .wrapperDescription {
+    grid-template-columns: 120px 1fr 0px 0px;
+    column-gap: 53px;
+    margin: 0px 0px 0px 70px;
+  }
+}
+@media (min-width: 1440px) {
+  .wrapperIntention {
+    width: 1202px;
+    margin: 0 0 0 40px;
+  }
+  .mainWrapperIntention {
+    margin: 0;
   }
 }
