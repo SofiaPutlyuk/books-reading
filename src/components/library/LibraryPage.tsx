@@ -25,7 +25,7 @@ useEffect(() => {
 })
     return(
         <div className="wrapperLibrary">
-            <button className="btnBack"><img src={backIcon} alt="back-icon"/></button>
+            <button className="btnBack" onClick={() => navigate("/intention")}><img src={backIcon} alt="back-icon"/></button>
             <form className="formLibrary" onSubmit={(e:React.FormEvent<HTMLFormElement>) => {
             e.preventDefault()
             const form = e.currentTarget
