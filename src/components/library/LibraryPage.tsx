@@ -4,11 +4,14 @@ import { useState } from "react"
 import { useAppSelector,useAppDispatch } from "../../redux/hook"
 import { postBook } from "../../redux/thunk/thunkBook"
 import { useEffect } from "react"
-import { useNavigate } from "react-router-dom"
-import { resetBookStatus } from "../../redux/slice/bookSlice"
+import { useNavigate, useLocation } from "react-router-dom"
+import { resetBookStatus,bookData } from "../../redux/slice/bookSlice"
 import { LibraryIntentionPage } from "./LibraryIntentionPage"
+import { LibraryPageStatus } from "./LibraryPageStatus"
 export const LibraryPage = () => {
 const [showInstruction, setShowInstruction] = useState(true)
+const location = useLocation()
+const isShowStatus = location.pathname === "/library/status"
 const closeModal = () => {
     setShowInstruction(false)
 }
@@ -25,7 +28,7 @@ useEffect(() => {
 })
     return(
         <div className="wrapperLibrary">
-            <button className="btnBack"><img src={backIcon} alt="back-icon"/></button>
+            <button className="btnBack" onClick={() => navigate("/library/intention")}><img src={backIcon} alt="back-icon"/></button>
             <form className="formLibrary" onSubmit={(e:React.FormEvent<HTMLFormElement>) => {
             e.preventDefault()
             const form = e.currentTarget
@@ -33,7 +36,8 @@ useEffect(() => {
             const author = (form.elements.namedItem("author") as HTMLInputElement).value
             const publish = Number((form.elements.namedItem("publish") as HTMLInputElement).value)
             const pageCount = Number((form.elements.namedItem("pageCount") as HTMLInputElement).value)
-            dispatch(postBook({name,author,publish,pageCount}))
+            const newBook: bookData = {name,author,publish,pageCount,status:"intention"}
+            dispatch(postBook(newBook))
             }}>
                 <label>
                     Назва книги
@@ -56,6 +60,7 @@ useEffect(() => {
                 <button className="btnAddBook" type="submit">Додати</button>
             </form>
             <div className="library-intention">
+            {isShowStatus && <LibraryPageStatus />}
             <LibraryIntentionPage />
             </div>
            {isBook.length === 0 && showInstruction && <LibraryInstructionStep closeModal={closeModal}/>}

@@ -1,4 +1,5 @@
 import readIcon from "../../assets/svg/readIcon.svg"
+import { useNavigate } from "react-router-dom"
 type ListIntention = {
     name: string,
     author: string,
@@ -9,6 +10,7 @@ type LibraryLntentionProps = {
     lists: ListIntention[]
 }
 export const LibraryIntention = ({ lists = [] }: LibraryLntentionProps) => {
+const navigate = useNavigate()
     return (
         <div className="mainWrapperIntention">
             <p className="mainTitleIntention">Маю намір прочитати</p>
@@ -21,7 +23,13 @@ export const LibraryIntention = ({ lists = [] }: LibraryLntentionProps) => {
             {lists.length === 0 ?
                 <p>Список порожній</p>
                 : (lists.map((elem) => (
-                    <div className="wrapperIntention">
+                    <div className="wrapperIntention"
+                    draggable
+                    onDragStart={(e) => {
+                        e.dataTransfer.setData("bookName", elem.name)
+                        e.dataTransfer.setData("bookAuthor", elem.author)
+                    }}
+                    >
                         <div className="wrapperTitle">
                             <img src={readIcon} alt="read-icon" />
                             <p className="title-intention">{elem.name}</p>
@@ -33,6 +41,10 @@ export const LibraryIntention = ({ lists = [] }: LibraryLntentionProps) => {
                         </div>
                     </div>
                 )))}
+                <div className="btnWrapperIntention">
+                <button className="btnNewIntention" onClick={() => navigate("/library")}>+</button>
+                <button className="btnNext" onClick={() => navigate("/library/status")}>Далі</button>
+                </div>
         </div>
     )
 }

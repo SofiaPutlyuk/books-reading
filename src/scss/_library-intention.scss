@@ -1,8 +1,9 @@
 .mainWrapperIntention {
     width: 320px;
-    height: 690px;
+    height: auto;
     background-color: $greyLightSecond;
     margin: auto;
+    padding-bottom: 40px;
 }
 
 .mainTitleIntention {
@@ -60,9 +61,40 @@
     display: none;
 }
 
+.btnNewIntention {
+    border-radius: 50%;
+    background-color: $orangeColor;
+    width: 52px;
+    height: 52px;
+    color: $white;
+    border: none;
+    position: relative;
+    bottom: 30px;
+}
+
+.btnNext {
+    width: 172px;
+    height: 42px;
+    background-color: $orangeColor;
+    @include text-second;
+    color: $white;
+    border: none;
+}
+
+.btnWrapperIntention {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 @media(min-width:768px) {
     .mainWrapperIntention {
         width: 768px;
+    }
+
+    .btnNext {
+        margin-top: 40px;
     }
 
     .wrapperIntention {
@@ -100,15 +132,45 @@
         column-gap: 53px;
         margin: 0px 0px 0px 70px;
     }
+
+    .btnNewIntention {
+        display: none;
+    }
+
+    .mainTitleIntention {
+        margin-left: 45px;
+    }
 }
 
 @media(min-width:1440px) {
+    .intentionHeader {
+        grid-template-columns: 4fr 3fr 1fr 1fr;
+        align-items: center;
+        column-gap: 16px;
+        width: 1240px;
+        margin-bottom: 20px;
+    }
+
+    .mainTitleIntention {
+        margin-left: 39px;
+    }
+
     .wrapperIntention {
         width: 1202px;
-        margin: 0 0 0 40px;
+        margin: 10px 0 0 40px;
+    }
+
+    .wrapperDescription {
+        margin: 0px 0px 0px 250px;
+        grid-template-columns: minmax(360px, 2fr) minmax(110px, 3fr) minmax(80px, 1fr) minmax(80px, 1fr);
+        width: 100%;
     }
 
     .mainWrapperIntention {
-        margin: 0;
+        width: 1280px;
+    }
+
+    .btnWrapperIntention {
+        width: 1280px;
     }
 }
