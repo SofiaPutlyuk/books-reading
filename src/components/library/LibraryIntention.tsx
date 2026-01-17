@@ -23,7 +23,13 @@ const navigate = useNavigate()
             {lists.length === 0 ?
                 <p>Список порожній</p>
                 : (lists.map((elem) => (
-                    <div className="wrapperIntention">
+                    <div className="wrapperIntention"
+                    draggable
+                    onDragStart={(e) => {
+                        e.dataTransfer.setData("bookName", elem.name)
+                        e.dataTransfer.setData("bookAuthor", elem.author)
+                    }}
+                    >
                         <div className="wrapperTitle">
                             <img src={readIcon} alt="read-icon" />
                             <p className="title-intention">{elem.name}</p>
@@ -37,7 +43,7 @@ const navigate = useNavigate()
                 )))}
                 <div className="btnWrapperIntention">
                 <button className="btnNewIntention" onClick={() => navigate("/library")}>+</button>
-                <button className="btnNext">Далі</button>
+                <button className="btnNext" onClick={() => navigate("/library/status")}>Далі</button>
                 </div>
         </div>
     )

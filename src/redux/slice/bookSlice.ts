@@ -1,16 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getBook, postBook } from "../thunk/thunkBook";
+export type BookStatus = "intention" | "reading" | "finished"
 export interface bookData {
     name: string,
     author: string,
     publish: number,
-    pageCount: number
+    pageCount: number,
+    status:BookStatus
 }
 export interface bookState {
     isLoading: boolean,
     error: null | string,
     info: bookData[],
-    isSuccess:boolean
+    isSuccess:boolean,
 }
 const initialState: bookState = {
     isLoading: false,
