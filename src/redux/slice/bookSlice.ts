@@ -34,7 +34,7 @@ const bookSlice = createSlice({
         },
         updateBookStatus:(state,action:PayloadAction<UpdateStatusPayload>) => {
         const {name, author, status} = action.payload
-        const book = state.info.find((b) => b.name  === name && author === author)
+        const book = state.info.find((b) => b.name  === name && b.author === author)
         if(book){
             book.status = status
         }
@@ -56,8 +56,9 @@ const bookSlice = createSlice({
                 state.error = null
             })
             .addCase(postBook.fulfilled, (state,action) => {
+                const newBook = {...action.payload, status:"intention" as BookStatus};
                 state.isLoading = false
-                state.info.push(action.payload)
+                state.info.push(newBook)
                 state.isSuccess = true
                 state.error = null
             })

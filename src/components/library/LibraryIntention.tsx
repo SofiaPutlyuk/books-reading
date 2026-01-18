@@ -1,5 +1,4 @@
 import readIcon from "../../assets/svg/readIcon.svg"
-import { DropZone } from "./dragDrop/DropZone"
 import { useNavigate } from "react-router-dom"
 type ListIntention = {
     name: string,
@@ -14,7 +13,7 @@ export const LibraryIntention = ({ lists = [] }: LibraryLntentionProps) => {
 const navigate = useNavigate()
     return (
         <div className="mainWrapperIntention">
-            <DropZone title="Маю намір прочитати" className="mainTitleIntention" status="intention" />
+            <p className="mainTitleIntention">Маю намір прочитати</p>
             <div className="intentionHeader">
                 <span className="headerCell">Назва книги</span>
                 <span className="headerCell">Автор</span>
@@ -22,7 +21,7 @@ const navigate = useNavigate()
                 <span className="headerCell">Стор.</span>
             </div>
             {lists.length === 0 ?
-                <p>Список порожній</p>
+                <p className="text-empty">Список порожній</p>
                 : (lists.map((elem) => (
                     <div className="wrapperIntention"
                     draggable

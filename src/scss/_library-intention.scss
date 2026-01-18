@@ -39,7 +39,10 @@
     column-gap: 8px;
     margin: 10px auto;
 }
-
+.text-empty {
+    text-align: center;
+    @include title;
+}
 .title-intention {
     color: $colorTitle;
     font-family: "Montserrat";
