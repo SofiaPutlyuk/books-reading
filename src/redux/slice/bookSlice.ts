@@ -20,12 +20,24 @@ const initialState: bookState = {
     info: [],
     isSuccess:false
 }
+interface UpdateStatusPayload {
+    name:string,
+    author:string,
+    status:BookStatus
+}
 const bookSlice = createSlice({
     name: 'book',
     initialState,
     reducers: {
         resetBookStatus:(state) => {
             state.isSuccess = false
+        },
+        updateBookStatus:(state,action:PayloadAction<UpdateStatusPayload>) => {
+        const {name, author, status} = action.payload
+        const book = state.info.find((b) => b.name  === name && author === author)
+        if(book){
+            book.status = status
+        }
         }
     },
     extraReducers: (builder) => {
@@ -51,5 +63,5 @@ const bookSlice = createSlice({
             })
     }
 })
-export const {resetBookStatus} = bookSlice.actions
+export const {resetBookStatus, updateBookStatus} = bookSlice.actions
 export default bookSlice.reducer;

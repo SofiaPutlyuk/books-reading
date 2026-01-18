@@ -22,7 +22,7 @@ const navigate = useNavigate()
 useEffect(() => {
   if(isSuccess){
     setShowInstruction(false)
-    navigate("/intention")
+    navigate("/library/intention")
     dispatch(resetBookStatus())
   }
 })
