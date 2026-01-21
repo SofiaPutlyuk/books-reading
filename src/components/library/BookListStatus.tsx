@@ -18,7 +18,7 @@ export const BookList = ({ lists }: BookProps) => {
                 <span className="headerCell">Стор.</span>
             </div>
             {lists.map((book, index) => (
-                <div key={index} className="wrapperIntention">
+                <div key={index} className="wrapperIntention bookItem" draggable>
                     <div className="wrapperTitle">
                         <img src={readIcon} alt="read-icon" />
                         <p className="title-intention">{book.name}</p>

@@ -39,10 +39,12 @@
     column-gap: 8px;
     margin: 10px auto;
 }
+
 .text-empty {
     text-align: center;
     @include title;
 }
+
 .title-intention {
     color: $colorTitle;
     font-family: "Montserrat";
@@ -89,6 +91,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.bookItem {
+    cursor: grab;
+}
+
+.bookItem:active {
+    cursor: grabbing;
 }
 
 @media(min-width:768px) {
