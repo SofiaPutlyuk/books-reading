@@ -8,6 +8,7 @@ import { useNavigate, useLocation } from "react-router-dom"
 import { resetBookStatus,bookData } from "../../redux/slice/bookSlice"
 import { LibraryIntentionPage } from "./LibraryIntentionPage"
 import { LibraryPageStatus } from "./LibraryPageStatus"
+import { BookStatus } from "../../redux/slice/bookSlice"
 export const LibraryPage = () => {
 const [showInstruction, setShowInstruction] = useState(true)
 const location = useLocation()
@@ -22,7 +23,7 @@ const navigate = useNavigate()
 useEffect(() => {
   if(isSuccess){
     setShowInstruction(false)
-    navigate("/intention")
+    navigate("/library/intention")
     dispatch(resetBookStatus())
   }
 })
@@ -36,7 +37,7 @@ useEffect(() => {
             const author = (form.elements.namedItem("author") as HTMLInputElement).value
             const publish = Number((form.elements.namedItem("publish") as HTMLInputElement).value)
             const pageCount = Number((form.elements.namedItem("pageCount") as HTMLInputElement).value)
-            const newBook: bookData = {name,author,publish,pageCount,status:"intention"}
+            const newBook: bookData = {name,author,publish,pageCount, status: "intention" as BookStatus}
             dispatch(postBook(newBook))
             }}>
                 <label>

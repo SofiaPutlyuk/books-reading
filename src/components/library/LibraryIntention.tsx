@@ -21,9 +21,9 @@ const navigate = useNavigate()
                 <span className="headerCell">Стор.</span>
             </div>
             {lists.length === 0 ?
-                <p>Список порожній</p>
+                <p className="text-empty">Список порожній</p>
                 : (lists.map((elem) => (
-                    <div className="wrapperIntention"
+                    <div className="wrapperIntention bookItem"
                     draggable
                     onDragStart={(e) => {
                         e.dataTransfer.setData("bookName", elem.name)
