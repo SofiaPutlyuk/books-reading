@@ -1,0 +1,59 @@
+.backdrop {
+    position:fixed;
+    background:$overlayColor;
+    width:100%;
+    height:100%;
+    z-index:1;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalResume {
+    width:570px;
+    height: 408px;
+    background-color: $white;
+    box-shadow: 10px 10px 20px 0px $boxShadowColor;
+}
+.text-resume {
+    @include text-second;
+    font-size:16px;
+    color:$colorTitle;
+    margin-bottom:10px;
+}
+.containerModal {
+    margin-left:30px;
+    margin-top:26px;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+.textarea-resume {
+    width:510px;
+    height: 170px;
+    border: 1px solid $greyLight;
+}
+.btnBackResume {
+    border: 1px solid $colorTitle;
+    width: 130px;
+    height:40px;
+    background: none;
+    @include text-second;
+    color:$colorTitle;
+}
+.btnSave {
+    background-color:$orangeColor ;
+    color:$white;
+    width:130px;
+    height:40px;
+    font-weight:500;
+    font-size:14px;
+    border:none;
+}
+.wrapperButtonResume {
+    display:flex;
+    justify-content: center;
+    margin-top:25px;
+    gap:30px;
+}

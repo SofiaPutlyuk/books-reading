@@ -110,6 +110,20 @@
         margin-top: 40px;
     }
 
+    .title-intention.finishedTitleIntention {
+        width: 45px;
+    }
+
+    .intentionHeader.finishedHeader {
+        grid-template-columns: 170px 1fr 70px 90px 260px;
+    }
+
+    .wrapperDescription.wrapperDescriptionFinished {
+        grid-template-columns: 1fr 0px 0px 60px 0px;
+        align-items: center;
+        column-gap: 80px;
+    }
+
     .wrapperIntention {
         width: 678px;
         height: 62px;
@@ -152,6 +166,16 @@
 
     .mainTitleIntention {
         margin-left: 45px;
+    }
+
+    .btnResume {
+        background-color: $greyDarkSecond;
+        width: 80px;
+        height: 40px;
+        box-shadow: 0px 2px 4px 0px #00000040;
+        @include text-second;
+        color: white;
+        border: none;
     }
 }
 
