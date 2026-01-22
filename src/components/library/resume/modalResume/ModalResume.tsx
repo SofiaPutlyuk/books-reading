@@ -2,15 +2,16 @@ import { postResume } from "../../../../redux/thunk/thunkResume"
 import { StarResume } from "../starResume/StarResume"
 import { useAppSelector, useAppDispatch } from "../../../../redux/hook"
 import { useState } from "react"
-export const ModalResume = () => {
+import { BookListData } from "../../BookListStatus"
+interface ModalResumeProps {
+    book:BookListData,
+    onClose:() => void
+}
+export const ModalResume = ({book, onClose}: ModalResumeProps) => {
     const info = useAppSelector((state) => state.resume.info)
-    console.log(info)
-    const initialRating = info[0]?.rating ?? 0
-    const [rating, setRating] = useState<number>(initialRating)
+     const resumeForBook = info.find(r => String(r.rating) === book._id)
+    const [rating, setRating] = useState<number>(resumeForBook?.rating ?? 0)
     const dispatch = useAppDispatch()
-    const [show, setShow] = useState<boolean>(true)
-    const onClose = () => setShow(false)
-    if (!show) return null;
     return (
             <div className="backdrop">
                 <div className="modalResume">
@@ -28,7 +29,10 @@ export const ModalResume = () => {
                                 <p className="text-resume">Резюме</p>
                                 <textarea className="textarea-resume" name="resume"></textarea>
                             </label>
-                            <button onClick={onClose} type="button">Зберегти</button>
+                            <div className="wrapperButtonResume">
+                            <button onClick={onClose} type="button" className="btnBackResume">Назад</button>
+                            <button  type="submit" className="btnSave">Зберегти</button>
+                        </div>
                         </form>
                     </div>
                 </div>

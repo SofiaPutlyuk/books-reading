@@ -20,13 +20,40 @@
     @include text-second;
     font-size:16px;
     color:$colorTitle;
+    margin-bottom:10px;
 }
 .containerModal {
     margin-left:30px;
     margin-top:26px;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
 }
 .textarea-resume {
     width:510px;
     height: 170px;
     border: 1px solid $greyLight;
+}
+.btnBackResume {
+    border: 1px solid $colorTitle;
+    width: 130px;
+    height:40px;
+    background: none;
+    @include text-second;
+    color:$colorTitle;
+}
+.btnSave {
+    background-color:$orangeColor ;
+    color:$white;
+    width:130px;
+    height:40px;
+    font-weight:500;
+    font-size:14px;
+    border:none;
+}
+.wrapperButtonResume {
+    display:flex;
+    justify-content: center;
+    margin-top:25px;
+    gap:30px;
 }
