@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { ResumeData } from "../slice/resumeSlice";
 import { RootState } from "../store";
 interface newResume {
+    bookId?:string,
     rating: number,
     resume: string
 }

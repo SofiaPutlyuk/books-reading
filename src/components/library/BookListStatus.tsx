@@ -1,7 +1,7 @@
 import readIcon from "../../assets/svg/readIcon.svg"
 import { StarResume } from "./resume/starResume/StarResume"
 export type BookListData = {
-    _id?: string,
+    _id: string,
     name: string,
     author: string,
     publish: number,
