@@ -26,11 +26,11 @@ const navigate = useNavigate()
                             Google
                         </button>
                         <label>
-                             <p style={{ flexDirection: "row" }}>Електронна адреса <span className="starRequired">*</span></p>
+                             <p style={{ flexDirection: "row", color:"#898F9F" }}>Електронна адреса <span className="starRequired">*</span></p>
                             <input type="email" placeholder="your@email.com" className="inputAccount" name="email"/>
                         </label>
                         <label>
-                              <p style={{ flexDirection: "row" }}>Пароль <span className="starRequired">*</span></p>
+                              <p style={{ flexDirection: "row", color:"#898F9F"  }}>Пароль <span className="starRequired">*</span></p>
                             <input type="password" placeholder="Пароль" className="inputAccount" name="password"/>
                         </label>
                         <button className="btnAccount" onClick={() => navigate("/library")}>Увійти</button>
