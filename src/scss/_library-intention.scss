@@ -188,6 +188,19 @@
         margin-bottom: 20px;
     }
 
+    .btnResume {
+        width: 130px;
+    }
+
+    .intentionHeader.finishedHeader {
+        grid-template-columns: 370px 1fr 70px 120px 460px;
+    }
+
+    .wrapperDescription.wrapperDescriptionFinished {
+        grid-template-columns: 80px 1fr 40px 120px 460px;
+        margin: 0px 0px 0px 300px;
+    }
+
     .mainTitleIntention {
         margin-left: 39px;
     }
