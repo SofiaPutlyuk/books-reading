@@ -11,13 +11,15 @@ export interface loginState {
     isLoading:boolean,
     error:string | null,
     isLogin:boolean,
-    info:loginResponse | null
+    info:loginResponse | null,
+    isSuccess:boolean
 }
 const initialState:loginState = {
     isLoading:false,
     error:null,
     isLogin:false,
-    info:null
+    info:null,
+    isSuccess:false
 }
 const loginSlice = createSlice({
     name:"login",
@@ -32,6 +34,7 @@ const loginSlice = createSlice({
         .addCase(postLoginUser.fulfilled, (state,action) => {
             state.isLoading = false
             state.info = action.payload
+            state.isSuccess = true
             state.error = null
             state.isLogin = true
         })
