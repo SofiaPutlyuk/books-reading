@@ -5,25 +5,78 @@
     box-shadow: 0px 2px 3px 0px $boxShadowColor;
     margin: auto;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
-.titleHeader{
+
+.titleHeader {
     @include title-text;
     font-size: 20px;
-    margin: auto;
 }
-@media(min-width:768px){
-    .headerReading{
-        width:768px
+
+.btnHeader {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border: none;
+    background-color: $greyLightThird;
+
+    &--back {
+        @extend .btnHeader;
+        background: transparent;
     }
-    .titleHeader{
-        margin:0;
+}
+
+.btnLogOut {
+    border: none;
+    background: none;
+    font-weight: 300;
+    @include text-second;
+}
+
+.separate-dash {
+    margin: 0;
+    height: 33px;
+    background-color: $veryLightGrey;
+}
+
+.iconsWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.userWrapperHeader {
+    display: none;
+}
+
+@media(min-width:768px) {
+    .headerReading {
+        width: 768px;
+        justify-content: space-between;
+        padding-right: 20px;
+    }
+
+    .userWrapperHeader {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btnAnotherDevices {
+        display: none;
+    }
+
+    .titleHeader {
+        margin: 0;
         display: flex;
         align-items: center;
         margin-left: 20px;
     }
 }
-@media(min-width:1440px){
-    .headerReading{
-        width:1280px;
+
+@media(min-width:1440px) {
+    .headerReading {
+        width: 1280px;
     }
 }
