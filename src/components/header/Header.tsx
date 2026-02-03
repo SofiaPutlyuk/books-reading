@@ -1,6 +1,7 @@
 import { useAppSelector } from "../../redux/hook"
 import bookIcon from "../../assets/svg/bookIcon.svg"
 import homeIcon from "../../assets/svg/homeIcon.svg"
+import { useNavigate, Link } from "react-router-dom"
 export const Header = () => {
     const isRegistrationSuccess = useAppSelector(state => state.registration.isSuccess)
     const userInfoRegistration = useAppSelector(state => state.registration.info)
@@ -8,6 +9,7 @@ export const Header = () => {
     const isLoginSuccess = useAppSelector(state => state.login.isSuccess)
     const userInfoLogin = useAppSelector(state => state.login.info)
     const userNameLogin = userInfoLogin?.user?.email
+    const navigate = useNavigate()
     console.log(isRegistrationSuccess, userNameRegistration)
     console.log(isLoginSuccess, userNameLogin)
     return (
@@ -19,7 +21,7 @@ export const Header = () => {
                         <button className="btnHeader">
                             {userNameRegistration?.charAt(0) || userNameLogin?.charAt(0)}
                         </button>
-                        <p>{userNameRegistration || userNameLogin}</p>
+                        <Link to="/account" className="textHeader">{userNameRegistration || userNameLogin}</Link>
                     </div>
                     <div className="iconsWrapper">
                         <button className="btnHeader">

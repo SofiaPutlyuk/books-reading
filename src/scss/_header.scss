@@ -13,7 +13,9 @@
     @include title-text;
     font-size: 20px;
 }
-
+a {
+    text-decoration: none;
+}
 .btnHeader {
     width: 33px;
     height: 33px;
@@ -30,10 +32,11 @@
 .btnLogOut {
     border: none;
     background: none;
-    font-weight: 300;
-    @include text-second;
+    @include styleHeader;
 }
-
+.textHeader {
+     @include styleHeader;
+}
 .separate-dash {
     margin: 0;
     height: 33px;
