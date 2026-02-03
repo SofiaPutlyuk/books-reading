@@ -4,6 +4,7 @@ import { InfoPage } from "./components/infoPage/InfoPage";
 import {Registration} from "./components/registration/Registration"
 import {Login} from "./components/login/Login"
 import {LayOut} from "./components/layout/Layout"
+import {AccountPage} from "./components/accountPage/AccountPage"
 import {LibraryPage} from "./components/library/LibraryPage"
 import { LibraryIntentionPage } from "./components/library/LibraryIntentionPage";
 import { LibraryPageStatus } from "./components/library/LibraryPageStatus";
@@ -20,6 +21,7 @@ function App() {
         <Route path="intention" element={<LibraryIntentionPage />} />
         <Route path="status" element={<LibraryPageStatus />} />
         </Route>
+        <Route path="/account" element={<AccountPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
