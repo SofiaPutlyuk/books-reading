@@ -25,7 +25,7 @@ The application allows users to:
 | Layer     | Technologies                                  |
 |----------|-----------------------------------------------|
 | 🎨 Frontend | React, TypeScript, JavaScript, Redux Toolkit, SCSS |
-| ⚙️ Backend  | Node.js, Express, MongoDB, Mongoose          |
+| ⚙️ Backend  | Node.js, Express, MongoDB, Mongoose , Next.js         |
 
 ## 🎨 Design
 🟦 UI/UX design created in Figma
