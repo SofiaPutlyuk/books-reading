@@ -25,9 +25,9 @@ export const Header = () => {
                     </div>
                     <div className="iconsWrapper">
                         <button className="btnHeader">
-                            <img src={bookIcon} alt="book-icon" />
+                            <img src={bookIcon} alt="book-icon" onClick={() => navigate("/library/status")}/>
                         </button>
-                        <button className="btnHeader--back">
+                        <button className="btnHeader--back" onClick={() => navigate("/library/intention")}>
                             <img src={homeIcon} alt="home-icon" />
                         </button>
                         <hr className="separate-dash" />

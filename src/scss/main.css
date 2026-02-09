@@ -1,3 +1,17 @@
+.container {
+  width: 320px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    width: 1280px;
+  }
+}
 .headerReading {
   width: 320px;
   height: 60px;
@@ -5,6 +19,8 @@
   box-shadow: 0px 2px 3px 0px rgba(9, 30, 63, 0.1019607843);
   margin: auto;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .titleHeader {
@@ -12,12 +28,70 @@
   font-family: "Abril Fatface";
   color: #242A37;
   font-size: 20px;
-  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btnHeader, .btnHeader--back {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: none;
+  background-color: #F5F7FA;
+}
+.btnHeader--back {
+  background: transparent;
+}
+
+.btnLogOut {
+  border: none;
+  background: none;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  font-weight: 300;
+}
+
+.textHeader {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  font-weight: 300;
+}
+
+.separate-dash {
+  margin: 0;
+  height: 33px;
+  background-color: #E0E5EB;
+}
+
+.iconsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userWrapperHeader {
+  display: none;
 }
 
 @media (min-width: 768px) {
   .headerReading {
-    width: 768px;
+    width: 748px;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
+  .userWrapperHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btnAnotherDevices {
+    display: none;
   }
   .titleHeader {
     margin: 0;
@@ -28,7 +102,7 @@
 }
 @media (min-width: 1440px) {
   .headerReading {
-    width: 1280px;
+    width: 1260px;
   }
 }
 .titleInfo {
@@ -612,7 +686,7 @@
   }
   .wrapperLibrary {
     width: 768px;
-    height: 1025px;
+    height: auto;
   }
   .formLibrary label:first-of-type .inputAddBook {
     width: 594px;
@@ -693,6 +767,13 @@
   margin: 10px auto;
 }
 
+.text-empty {
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 19px;
+  font-weight: 600;
+}
+
 .title-intention {
   color: #242A37;
   font-family: "Montserrat";
@@ -750,12 +831,31 @@
   justify-content: center;
 }
 
+.bookItem {
+  cursor: grab;
+}
+
+.bookItem:active {
+  cursor: grabbing;
+}
+
 @media (min-width: 768px) {
   .mainWrapperIntention {
     width: 768px;
   }
   .btnNext {
     margin-top: 40px;
+  }
+  .title-intention.finishedTitleIntention {
+    width: 45px;
+  }
+  .intentionHeader.finishedHeader {
+    grid-template-columns: 170px 1fr 70px 90px 260px;
+  }
+  .wrapperDescription.wrapperDescriptionFinished {
+    grid-template-columns: 1fr 0px 0px 60px 0px;
+    align-items: center;
+    column-gap: 80px;
   }
   .wrapperIntention {
     width: 678px;
@@ -792,6 +892,18 @@
   .mainTitleIntention {
     margin-left: 45px;
   }
+  .btnResume {
+    background-color: #6D7A8D;
+    width: 80px;
+    height: 40px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2509803922);
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 14px;
+    color: #898F9F;
+    color: white;
+    border: none;
+  }
 }
 @media (min-width: 1440px) {
   .intentionHeader {
@@ -800,6 +912,16 @@
     column-gap: 16px;
     width: 1240px;
     margin-bottom: 20px;
+  }
+  .btnResume {
+    width: 130px;
+  }
+  .intentionHeader.finishedHeader {
+    grid-template-columns: 370px 1fr 70px 120px 460px;
+  }
+  .wrapperDescription.wrapperDescriptionFinished {
+    grid-template-columns: 80px 1fr 40px 120px 460px;
+    margin: 0px 0px 0px 300px;
   }
   .mainTitleIntention {
     margin-left: 39px;
@@ -818,5 +940,162 @@
   }
   .btnWrapperIntention {
     width: 1280px;
+  }
+}
+.backdrop {
+  position: fixed;
+  background: rgba(43, 43, 43, 0.1019607843);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalResume {
+  width: 570px;
+  height: 408px;
+  background-color: #FFF;
+  box-shadow: 10px 10px 20px 0px rgba(9, 30, 63, 0.1019607843);
+}
+
+.text-resume {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  font-size: 16px;
+  color: #242A37;
+  margin-bottom: 10px;
+}
+
+.containerModal {
+  margin-left: 30px;
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.textarea-resume {
+  width: 510px;
+  height: 170px;
+  border: 1px solid #A6ABB9;
+}
+
+.btnBackResume {
+  border: 1px solid #242A37;
+  width: 130px;
+  height: 40px;
+  background: none;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+  color: #242A37;
+}
+
+.btnSave {
+  background-color: #FF6B08;
+  color: #FFF;
+  width: 130px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+}
+
+.wrapperButtonResume {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 30px;
+}
+
+.btnStar {
+  background: none;
+  border: none;
+  padding: 0 10px 0 0;
+}
+
+.wrapperAccount {
+  display: flex;
+  flex-direction: column;
+}
+
+.backgroundWrapper {
+  background-image: url("../assets/images/backgroundWrapperAccount.jpg");
+  width: 320px;
+  height: 130px;
+  background-size: cover;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.accountImage {
+  border-radius: 50%;
+  width: 123px;
+  height: 123px;
+  border: none;
+  position: relative;
+  top: 50px;
+  padding: 0;
+}
+
+.imageDefaultAccount {
+  width: 123px;
+  height: 123px;
+}
+
+.btnChangeImage {
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-color: #FF6B08;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.userName {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: #898F9F;
+}
+
+.containerAccount {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btnEdit {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  color: #FFF;
+  background-color: #FF6B08;
+  font-family: "Montserrat";
+}
+
+@media (min-width: 768px) {
+  .backgroundWrapper {
+    width: 768px;
+    height: 210px;
+  }
+  .accountImage {
+    top: 120px;
   }
 }
